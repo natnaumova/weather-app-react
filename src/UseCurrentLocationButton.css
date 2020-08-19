@@ -1,0 +1,8 @@
+div#use-current-location {
+  margin-top: 10px;
+}
+
+a.use-current-location {
+  color: #007bff;
+  text-decoration: none;
+}

@@ -1,0 +1,49 @@
+h2 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+p,
+.min-max-temp {
+  margin-bottom: 0;
+}
+
+.min-max-temp {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.min-max-temp {
+  text-align: left;
+}
+.col-sm .today-weather-icon {
+  height: 150px;
+}
+
+.col-sm .today-weather-icon,
+.col-sm .weather-description {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.row .col-sm .current-temperature {
+  margin: 5px 0 5px 0;
+  font-size: 72px;
+  font-weight: 600;
+  text-align: left;
+}
+.row .col-sm .current-temperature .units .fahrenheit-button,
+.row .col-sm .current-temperature .units {
+  font-size: 28px;
+}
+
+.row .col-sm .current-temperature .units {
+  vertical-align: 80%;
+}
+
+.row .col-sm .current-temperature .units .fahrenheit-button {
+  font-weight: 300;
+}

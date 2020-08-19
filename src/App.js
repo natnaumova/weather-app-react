@@ -1,18 +1,29 @@
 import React from "react";
+import Form from "./Form";
+import UseCurrentLocationButton from "./UseCurrentLocationButton";
+import CurrentData from "./CurrentData";
+import Forecast from "./Forecast";
 
 import "./App.css";
 
-import Weather from "./Weather";
-
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello world</h1>
-        <Weather city="London" />
-      </header>
+      <div className="box">
+        <h1>Latest weather forecast</h1>
+        <div className="container">
+          <Form />
+          <UseCurrentLocationButton />
+          <CurrentData />
+          <Forecast />
+        </div>
+      </div>
+      <small>
+        <a href="https://github.com/natnaumova/My-app" target="_blank">
+          Open sourse code
+        </a>{" "}
+        by Natalia Naumova
+      </small>
     </div>
   );
 }
-
-export default App;
