@@ -14,11 +14,11 @@ export default function Form() {
               type="search"
               placeholder="Enter location"
               className="form-control"
-              autoComplete="off"
+              autoFocus="on"
             />
           </div>
           <div className="col-2">
-            <button className=" col-2 btn btn-outline-primary">
+            <button className=" btn btn-outline-primary">
               <FontAwesomeIcon icon={faSearch} />
             </button>
           </div>

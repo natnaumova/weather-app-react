@@ -6,3 +6,6 @@
 img.forecast-icon {
   height: 70px;
 }
+.col-2 {
+  flex: 0 0 10%;
+}
