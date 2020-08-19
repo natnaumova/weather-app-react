@@ -1,10 +1,8 @@
 import React from "react";
 import "./Form.css";
 
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { library } from "@fortawesome/fontawesome-svg-core";
-//import { faSearch } from "@fortawesome/free-solid-svg-icons";
-//library.add(faSearch);
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Form() {
   return (
@@ -21,7 +19,7 @@ export default function Form() {
           </div>
           <div className="col-2">
             <button className=" col-2 btn btn-outline-primary">
-              {/* <FontAwesomeIcon icon="search" /> */} "S"
+              <FontAwesomeIcon icon={faSearch} />
             </button>
           </div>
         </div>

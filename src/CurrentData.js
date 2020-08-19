@@ -1,10 +1,8 @@
 import React from "react";
 
 import "./CurrentData.css";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { library } from "@fortawesome/fontawesome-svg-core";
-//import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
-//library.add(faArrowUp, faArrowDown);
+import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CurrentDate() {
   let weatherData = {
@@ -30,9 +28,13 @@ export default function CurrentDate() {
           </div>
 
           <div className="min-max-temp">
-            <span>{/* <FontAwesomeIcon icon="arrow-up" /> */} 30°</span>{" "}
+            <span>
+              <FontAwesomeIcon icon={faArrowUp} /> 30°
+            </span>{" "}
             &nbsp;&nbsp;
-            <span>{/*<FontAwesomeIcon icon="arrow-down" /> */} 26°</span>
+            <span>
+              <FontAwesomeIcon icon={faArrowDown} /> 26°
+            </span>
           </div>
         </div>
 
