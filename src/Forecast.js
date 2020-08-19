@@ -19,7 +19,7 @@ export default function Forecast() {
         </div>
 
         <div className="col-sm">
-          <p>16:00</p>
+          <p>17:00</p>
           <img
             className="forecast-icon"
             src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
