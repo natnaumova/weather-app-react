@@ -20,13 +20,20 @@ export default function App() {
       </div>
       <small>
         <a
-          href="https://github.com/natnaumova/My-app"
+          href="https://github.com/natnaumova/weather-app-react"
           target="_blank"
           rel="noopener noreferrer"
         >
           Open sourse code
         </a>{" "}
-        by Natalia Naumova
+        by{" "}
+        <a
+          href="https://natalianaumova.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Natalia Naumova
+        </a>
       </small>
     </div>
   );
