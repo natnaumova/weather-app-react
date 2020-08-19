@@ -19,7 +19,11 @@ export default function App() {
         </div>
       </div>
       <small>
-        <a href="https://github.com/natnaumova/My-app" target="_blank">
+        <a
+          href="https://github.com/natnaumova/My-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Open sourse code
         </a>{" "}
         by Natalia Naumova
