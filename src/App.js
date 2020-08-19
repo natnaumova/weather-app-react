@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import Form from "./Form";
 import UseCurrentLocationButton from "./UseCurrentLocationButton";
 import CurrentData from "./CurrentData";
@@ -14,10 +15,11 @@ export default function App() {
         <div className="container">
           <Form />
           <UseCurrentLocationButton />
-          <CurrentData />
+          <CurrentData defaultCity="New York" />
           <Forecast />
         </div>
       </div>
+
       <small>
         <a
           href="https://github.com/natnaumova/weather-app-react"
