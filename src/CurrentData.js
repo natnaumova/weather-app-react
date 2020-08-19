@@ -51,9 +51,7 @@ export default function CurrentDate(props) {
               alt={weatherData.description}
               className="today-weather-icon"
             />
-            <p className="weather-description text-capitalize">
-              {weatherData.description}
-            </p>
+            <p className="weather-description">{weatherData.description}</p>
           </div>
         </div>
       </div>

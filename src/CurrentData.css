@@ -47,3 +47,6 @@ p,
 .row .col-sm .current-temperature .units .fahrenheit-button {
   font-weight: 300;
 }
+.weather-description:first-letter {
+  text-transform: capitalize;
+}
