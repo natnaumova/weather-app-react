@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import WeatherIcon from "./WeatherIcon";
+
 import "./CurrentData.css";
 import {
   faArrowUp,
@@ -20,7 +22,7 @@ export default function CurrentDate(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      imgUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       tempMin: Math.round(response.data.main.temp_min),
       tempMax: Math.round(response.data.main.temp_max),
     });
@@ -92,12 +94,9 @@ export default function CurrentDate(props) {
               </div>
             </div>
 
-            <div className="col-sm">
-              <img
-                src={weatherData.imgUrl}
-                alt={weatherData.description}
-                className="today-weather-icon"
-              />
+            <div className="col-sm weather-icon">
+              <WeatherIcon code={weatherData.icon} />
+
               <p className="weather-description">{weatherData.description}</p>
             </div>
           </div>

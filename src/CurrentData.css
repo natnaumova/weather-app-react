@@ -18,11 +18,8 @@ p,
 .min-max-temp {
   text-align: left;
 }
-.col-sm .today-weather-icon {
-  height: 150px;
-}
 
-.col-sm .today-weather-icon,
+.weather-icon,
 .col-sm .weather-description {
   display: block;
   margin: 10px auto;
