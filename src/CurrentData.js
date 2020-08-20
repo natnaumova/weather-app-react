@@ -3,6 +3,7 @@ import axios from "axios";
 import "./CurrentData.css";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FormattedTime from "./FormattedTime";
 
 export default function CurrentDate(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -12,7 +13,7 @@ export default function CurrentDate(props) {
       ready: true,
       temperature: Math.round(response.data.main.temp),
       city: response.data.name,
-      time: "14:24 Thursday 30 July",
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
     });
@@ -26,7 +27,9 @@ export default function CurrentDate(props) {
         <div className="row">
           <div className="col-sm">
             <p>Last updated:</p>
-            <p>{weatherData.time}</p>
+            <p>
+              <FormattedTime date={weatherData.date} />
+            </p>
             <div className="current-temperature">
               {weatherData.temperature}
               <span className="units">
