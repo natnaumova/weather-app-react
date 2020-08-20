@@ -17,7 +17,6 @@ export default function App() {
           <Forecast />
         </div>
       </div>
-
       <small>
         <a
           href="https://github.com/natnaumova/weather-app-react"
@@ -33,6 +32,14 @@ export default function App() {
           rel="noopener noreferrer"
         >
           Natalia Naumova
+        </a>{" "}
+        ☝ Icons by{" "}
+        <a
+          href="https://www.flaticon.com/authors/iconixar"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          iconixar
         </a>
       </small>
     </div>
