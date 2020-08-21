@@ -70,7 +70,11 @@ export default function CurrentDate(props) {
             </div>
           </form>
         </div>
-        <UseCurrentLocationButton onLocationSelected={city} />
+        <UseCurrentLocationButton
+          onLocationResponse={(response) =>
+            setWeatherData({ ...weatherData, city: response })
+          }
+        />
         <div>
           <h2>{weatherData.city}</h2>
 
@@ -101,6 +105,7 @@ export default function CurrentDate(props) {
               <p className="weather-description">{weatherData.description}</p>
             </div>
           </div>
+
           <Forecast city={weatherData.city} />
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function WeatherIcon(props) {
-  console.log(props.code);
   const codeMapping = {
     "01d": "sunny",
     "01n": "clearmoon",

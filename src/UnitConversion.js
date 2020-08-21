@@ -20,9 +20,12 @@ export default function UnitConversion(props) {
   if (unit === "celsius") {
     return (
       <div className="units">
-        <span className="actual-temperature"> {props.celsius} </span>°C |
+        <span className="actual-temperature"> {props.celsius} </span>
         <span className="fahrenheit-button">
-          <button onClick={showFahrenheit}>°F</button>
+          <span className="pressed-button">°C </span>
+          <span className="unpressed-button">
+            |<button onClick={showFahrenheit}>°F</button>
+          </span>
         </span>
       </div>
     );
@@ -31,7 +34,10 @@ export default function UnitConversion(props) {
       <div className="units">
         <span className="actual-temperature">{fahrenheit()}</span>
         <span className="celcius-button">
-          <button onClick={showCelsius}>°C</button> | °F
+          <span className="unpressed-button">
+            <button onClick={showCelsius}>°C</button>|
+          </span>{" "}
+          <span className="pressed-button">°F</span>
         </span>
       </div>
     );
