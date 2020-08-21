@@ -1,0 +1,25 @@
+.actual-temperature {
+  margin: 5px 0 5px 0;
+  font-size: 77px;
+  font-weight: 600;
+  text-align: left;
+}
+.celcius-button,
+.fahrenheit-button,
+.units {
+  font-size: 28px;
+  font-weight: 600;
+}
+.actual-temperature {
+  vertical-align: -30%;
+}
+button {
+  border: none;
+  color: #4d617c;
+  background-color: transparent;
+  font-weight: 300;
+}
+button:focus {
+  outline: none !important;
+  box-shadow: none;
+}

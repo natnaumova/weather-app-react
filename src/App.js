@@ -1,6 +1,5 @@
 import React from "react";
 
-import UseCurrentLocationButton from "./UseCurrentLocationButton";
 import CurrentData from "./CurrentData";
 import Forecast from "./Forecast";
 
@@ -12,7 +11,6 @@ export default function App() {
       <div className="box">
         <h1>Latest weather forecast</h1>
         <div className="container">
-          <UseCurrentLocationButton />
           <CurrentData defaultCity="New York" />
           <Forecast />
         </div>

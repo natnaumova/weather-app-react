@@ -26,12 +26,6 @@ p,
   text-align: center;
 }
 
-.row .col-sm .current-temperature {
-  margin: 5px 0 5px 0;
-  font-size: 72px;
-  font-weight: 600;
-  text-align: left;
-}
 .row .col-sm .current-temperature .units .fahrenheit-button,
 .row .col-sm .current-temperature .units {
   font-size: 28px;

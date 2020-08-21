@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import UseCurrentLocationButton from "./UseCurrentLocationButton";
 import WeatherIcon from "./WeatherIcon";
+import UnitConversion from "./UnitConversion";
 
 import "./CurrentData.css";
 import {
@@ -66,7 +68,7 @@ export default function CurrentDate(props) {
             </div>
           </form>
         </div>
-
+        <UseCurrentLocationButton />
         <div>
           <h2>{weatherData.city}</h2>
 
@@ -77,10 +79,7 @@ export default function CurrentDate(props) {
                 <FormattedTime date={weatherData.date} />
               </p>
               <div className="current-temperature">
-                {weatherData.temperature}
-                <span className="units">
-                  °C | <span className="fahrenheit-button">°F</span>
-                </span>
+                <UnitConversion celsius={weatherData.temperature} />
               </div>
 
               <div className="min-max-temp">
