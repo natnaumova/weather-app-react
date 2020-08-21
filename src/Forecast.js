@@ -1,75 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import ForecastPreview from "./ForecastPreview";
+import axios from "axios";
 import "./Forecast.css";
+import ReactLoading from "react-loading";
 
-export default function Forecast() {
-  return (
-    <div className="forecast">
-      <div className="row">
-        <div className="col-sm">
-          <p>16:00</p>
-          <img
-            className="forecast-icon"
-            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-            alt="weather-icon"
-          />
-          <p>
-            <b>31 °C</b>
-          </p>
-          <p>29 °C</p>
-        </div>
+export default function Forecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState(null);
 
-        <div className="col-sm">
-          <p>17:00</p>
-          <img
-            className="forecast-icon"
-            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-            alt="weather-icon"
-          />
-          <p>
-            <b>31 °C</b>
-          </p>
-          <p>29 °C</p>
-        </div>
+  function handleForecastResponse(response) {
+    setForecast(response.data);
+    setLoaded(true);
+  }
 
-        <div className="col-sm">
-          <p>16:00</p>
-          <img
-            className="forecast-icon"
-            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-            alt="weather-icon"
-          />
-          <p>
-            <b>31 °C</b>
-          </p>
-          <p>29 °C</p>
-        </div>
-
-        <div className="col-sm">
-          <p>16:00</p>
-          <img
-            className="forecast-icon"
-            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-            alt="weather-icon"
-          />
-          <p>
-            <b>31 °C</b>
-          </p>
-          <p>29 °C</p>
-        </div>
-
-        <div className="col-sm">
-          <p>16:00</p>
-          <img
-            className="forecast-icon"
-            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-            alt="weather-icon"
-          />
-          <p>
-            <b>31 °C</b>
-          </p>
-          <p>29 °C</p>
-        </div>
+  if (loaded && props.city === forecast.city.name) {
+    return (
+      <div className="WeatherForecast row">
+        <ForecastPreview data={forecast.list[0]} />
+        <ForecastPreview data={forecast.list[1]} />
+        <ForecastPreview data={forecast.list[2]} />
+        <ForecastPreview data={forecast.list[3]} />
+        <ForecastPreview data={forecast.list[4]} />
       </div>
-    </div>
-  );
+    );
+  } else {
+    let apiKey = "b30495f5be74d741761fbfcaa3522a47";
+    let url = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(handleForecastResponse);
+
+    return (
+      <div className="spinner">
+        <ReactLoading type="spin" color="#007bff" height="64px" width="64px" />
+      </div>
+    );
+  }
 }

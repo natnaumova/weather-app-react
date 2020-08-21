@@ -3,6 +3,8 @@ import axios from "axios";
 import UseCurrentLocationButton from "./UseCurrentLocationButton";
 import WeatherIcon from "./WeatherIcon";
 import UnitConversion from "./UnitConversion";
+import ReactLoading from "react-loading";
+import Forecast from "./Forecast";
 
 import "./CurrentData.css";
 import {
@@ -40,7 +42,7 @@ export default function CurrentDate(props) {
   }
 
   function search() {
-    const apiKey = "ca50e9c19e1a4269dd83c8d98bf6c691";
+    const apiKey = "b30495f5be74d741761fbfcaa3522a47";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -68,27 +70,27 @@ export default function CurrentDate(props) {
             </div>
           </form>
         </div>
-        <UseCurrentLocationButton />
+        <UseCurrentLocationButton onLocationSelected={city} />
         <div>
           <h2>{weatherData.city}</h2>
 
           <div className="row">
             <div className="col-sm">
               <p>Last updated:</p>
-              <p>
-                <FormattedTime date={weatherData.date} />
-              </p>
+
+              <FormattedTime date={weatherData.date} />
+
               <div className="current-temperature">
                 <UnitConversion celsius={weatherData.temperature} />
               </div>
 
               <div className="min-max-temp">
                 <span>
-                  <FontAwesomeIcon icon={faArrowUp} /> {weatherData.tempMax}°
+                  <FontAwesomeIcon icon={faArrowUp} /> {weatherData.tempMax}°C
                 </span>{" "}
                 &nbsp;&nbsp;
                 <span>
-                  <FontAwesomeIcon icon={faArrowDown} /> {weatherData.tempMin}°
+                  <FontAwesomeIcon icon={faArrowDown} /> {weatherData.tempMin}°C
                 </span>
               </div>
             </div>
@@ -99,11 +101,16 @@ export default function CurrentDate(props) {
               <p className="weather-description">{weatherData.description}</p>
             </div>
           </div>
+          <Forecast city={weatherData.city} />
         </div>
       </div>
     );
   } else {
     search();
-    return "Loading";
+    return (
+      <div className="spinner">
+        <ReactLoading type="spin" color="#007bff" height="64px" width="64px" />
+      </div>
+    );
   }
 }

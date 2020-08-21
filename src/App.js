@@ -1,7 +1,6 @@
 import React from "react";
 
 import CurrentData from "./CurrentData";
-import Forecast from "./Forecast";
 
 import "./App.css";
 
@@ -12,7 +11,6 @@ export default function App() {
         <h1>Latest weather forecast</h1>
         <div className="container">
           <CurrentData defaultCity="New York" />
-          <Forecast />
         </div>
       </div>
       <small>
@@ -31,7 +29,7 @@ export default function App() {
         >
           Natalia Naumova
         </a>{" "}
-        ☝ Icons by{" "}
+        ☝ Icons inspired by{" "}
         <a
           href="https://www.flaticon.com/authors/iconixar"
           target="_blank"

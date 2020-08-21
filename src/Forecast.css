@@ -1,11 +1,15 @@
-.forecast {
+.col-2 {
+  flex: 0 0 10%;
+}
+
+.ForecastPreview img {
+  height: 70px;
+  width: 70px;
+}
+.ForecastPreview {
   margin-top: 45px;
   text-align: center;
 }
-
-img.forecast-icon {
-  height: 70px;
-}
-.col-2 {
-  flex: 0 0 10%;
+.forecast-temperature {
+  font-weight: 600;
 }
