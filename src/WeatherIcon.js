@@ -4,7 +4,7 @@ export default function WeatherIcon(props) {
   console.log(props.code);
   const codeMapping = {
     "01d": "https://image.flaticon.com/icons/svg/1163/1163662.svg",
-    "01n": "https://image.flaticon.com/icons/svg/1163/1163647.svg",
+    "01n": "https://image.flaticon.com/icons/svg/1163/1163645.svg",
     "02d": "https://image.flaticon.com/icons/svg/1163/1163661.svg",
     "02n": "https://image.flaticon.com/icons/svg/1163/1163625.svg",
     "03d": "https://image.flaticon.com/icons/svg/1163/1163624.svg",
