@@ -32,3 +32,6 @@ button:focus {
   font-size: 28px;
   font-weight: 200;
 }
+.units {
+  margin-top: 4px;
+}
