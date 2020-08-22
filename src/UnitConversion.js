@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "./UnitConversion.css";
 
+export function fahrenheit(celsius) {
+  return Math.round((celsius * 9) / 5 + 32);
+}
+
 export default function UnitConversion(props) {
   const [unit, setUnit] = useState("celsius");
   function showFahrenheit(event) {
@@ -13,16 +17,12 @@ export default function UnitConversion(props) {
     setUnit("celsius");
   }
 
-  function fahrenheit() {
-    return Math.round((props.celsius * 9) / 5 + 32);
-  }
-
   if (unit === "celsius") {
     return (
       <div className="units">
-        <span className="actual-temperature"> {props.celsius} </span>
+        <span className="actual-temperature"> {props.celsius}</span>
         <span className="fahrenheit-button">
-          <span className="pressed-button">°C </span>
+          <span className="pressed-button"> °C </span>
           <span className="unpressed-button">
             |<button onClick={showFahrenheit}>°F</button>
           </span>
@@ -32,7 +32,7 @@ export default function UnitConversion(props) {
   } else {
     return (
       <div className="units">
-        <span className="actual-temperature">{fahrenheit()}</span>
+        <span className="actual-temperature">{fahrenheit(props.celsius)}</span>
         <span className="celcius-button">
           <span className="unpressed-button">
             <button onClick={showCelsius}>°C</button>|

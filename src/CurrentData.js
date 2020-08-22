@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import UseCurrentLocationButton from "./UseCurrentLocationButton";
+
 import WeatherIcon from "./WeatherIcon";
 import UnitConversion from "./UnitConversion";
 import ReactLoading from "react-loading";
@@ -70,11 +70,7 @@ export default function CurrentDate(props) {
             </div>
           </form>
         </div>
-        <UseCurrentLocationButton
-          onLocationResponse={(response) =>
-            setWeatherData({ ...weatherData, city: response })
-          }
-        />
+
         <div>
           <h2>{weatherData.city}</h2>
 
